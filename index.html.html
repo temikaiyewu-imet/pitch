@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Growth Proposal – Imet Creates</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --ink: #1A1612;
+    --gold: #C9A84C;
+    --gold-light: #E8D5A3;
+    --warm-grey: #8C7B6B;
+    --section-bg: #EFEAD F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 48px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #C9A84C22 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 350px; height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #C9A84C15 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-grey);
+    font-weight: 500;
+  }
+
+  .nav-brand {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .hero-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 40px;
+    max-width: 780px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--gold);
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--warm-grey);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .hero-footer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #D4C9B8;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--warm-grey);
+    margin-top: 4px;
+  }
+
+  .divider-line {
+    width: 1px; height: 40px;
+    background: #D4C9B8;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 80px 64px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+  }
+
+  /* ── THE GAP ── */
+  .gap-section {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .gap-section .section-label { color: var(--gold); }
+  .gap-section .section-label::before { background: var(--gold); }
+
+  .gap-grid {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0;
+    align-items: center;
+    margin-top: 48px;
+  }
+
+  .gap-card {
+    padding: 40px;
+    border: 1px solid #333;
+    border-radius: 4px;
+  }
+
+  .gap-card-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-grey);
+    margin-bottom: 20px;
+  }
+
+  .gap-card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid #2A2520;
+  }
+
+  .gap-card-item:last-child { border-bottom: none; }
+
+  .gap-card-item-label {
+    font-size: 13px;
+    color: #A09080;
+  }
+
+  .gap-card-item-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .gap-card-item-val.strong { color: var(--gold); }
+  .gap-card-item-val.weak { color: #FF6B6B; }
+
+  .gap-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-size: 24px;
+  }
+
+  .gap-arrow span {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    color: var(--warm-grey);
+  }
+
+  .gap-insight {
+    margin-top: 40px;
+    padding: 28px 40px;
+    border-left: 3px solid var(--gold);
+    background: #221E1A;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .gap-insight p {
+    font-size: 16px;
+    color: #C8BFB0;
+    line-height: 1.7;
+  }
+
+  .gap-insight strong { color: var(--cream); font-weight: 500; }
+
+  /* ── WHAT I OFFER ── */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+    background: #D4C9B8;
+  }
+
+  .offer-card {
+    background: var(--cream);
+    padding: 40px 32px;
+    transition: background 0.2s;
+  }
+
+  .offer-card:hover { background: #FDFAF4; }
+
+  .offer-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .offer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .offer-desc {
+    font-size: 14px;
+    color: var(--warm-grey);
+    line-height: 1.7;
+  }
+
+  /* ── CONTENT IDEAS ── */
+  .ideas-section { background: #F0EAE0; }
+
+  .ideas-list {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .idea-row {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 32px;
+    padding: 28px 32px;
+    background: var(--cream);
+    transition: background 0.2s;
+  }
+
+  .idea-row:hover { background: #FDFAF4; }
+
+  .idea-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .idea-title {
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .idea-desc {
+    font-size: 13px;
+    color: var(--warm-grey);
+  }
+
+  .idea-tag {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: #C9A84C18;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  /* ── PROOF ── */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .proof-card {
+    padding: 36px 32px;
+    border: 1px solid #D4C9B8;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .proof-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+  }
+
+  .proof-period {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-grey);
+    margin-bottom: 20px;
+  }
+
+  .proof-metric {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .proof-before {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--warm-grey);
+    text-decoration: line-through;
+    text-decoration-color: #FF6B6B88;
+  }
+
+  .proof-arrow { color: var(--gold); font-size: 14px; }
+
+  .proof-after {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .proof-label {
+    font-size: 12px;
+    color: var(--warm-grey);
+    margin-top: 8px;
+  }
+
+  /* ── ENGAGEMENT EDGE ── */
+  .edge-section {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .edge-section .section-label { color: var(--gold); }
+  .edge-section .section-label::before { background: var(--gold); }
+
+  .edge-section h2 { color: var(--cream); }
+
+  .edge-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-top: 48px;
+    align-items: center;
+  }
+
+  .edge-text p {
+    font-size: 16px;
+    color: #A09080;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .edge-text strong { color: var(--cream); font-weight: 500; }
+
+  .edge-quote {
+    padding: 36px 40px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .edge-quote::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px; left: 24px;
+    line-height: 1;
+  }
+
+  .edge-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #C8BFB0;
+    padding-top: 20px;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    text-align: center;
+    padding: 100px 64px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: 'IMET';
+    font-family: 'Playfair Display', serif;
+    font-size: 240px;
+    font-weight: 700;
+    color: #C9A84C0A;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    color: var(--warm-grey);
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .cta-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .cta-link-primary {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .cta-link-primary:hover { background: #2D2620; }
+
+  .cta-link-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid #D4C9B8;
+  }
+
+  .cta-link-secondary:hover { border-color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 64px;
+    border-top: 1px solid #D4C9B8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--warm-grey);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero, section, footer { padding-left: 24px; padding-right: 24px; }
+    .gap-grid { grid-template-columns: 1fr; }
+    .gap-arrow { display: none; }
+    .offer-grid { grid-template-columns: 1fr; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .edge-body { grid-template-columns: 1fr; gap: 32px; }
+    .idea-row { grid-template-columns: 32px 1fr; }
+    .idea-tag { display: none; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <nav class="nav">
+    <span class="nav-brand">Imet Creates</span>
+    <span>TikTok Growth Proposal · 2026</span>
+  </nav>
+
+  <div class="hero-body">
+    <div class="eyebrow">Prepared for The Magician</div>
+    <h1>Your work deserves<br>to be <em>seen.</em></h1>
+    <p class="hero-sub">You've built a legacy of award-winning wedding films. Your TikTok tells a different story — and that's the gap I'm here to close.</p>
+  </div>
+
+  <div class="hero-footer">
+    <div class="hero-stat">
+      <span class="hero-stat-num">19.3k</span>
+      <span class="hero-stat-label">Instagram Following</span>
+    </div>
+    <div class="divider-line"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">269</span>
+      <span class="hero-stat-label">TikTok Following</span>
+    </div>
+    <div class="divider-line"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">1</span>
+      <span class="hero-stat-label">TikTok Video Posted</span>
+    </div>
+  </div>
+</section>
+
+<!-- THE GAP -->
+<section class="gap-section">
+  <div class="section-label">The Opportunity</div>
+  <h2>Talent without distribution<br>is a best-kept secret.</h2>
+
+  <div class="gap-grid">
+    <div class="gap-card">
+      <div class="gap-card-label">Where you are now</div>
+      <div class="gap-card-item">
+        <span class="gap-card-item-label">TikTok followers</span>
+        <span class="gap-card-item-val weak">269</span>
+      </div>
+      <div class="gap-card-item">
+        <span class="gap-card-item-label">Last TikTok post</span>
+        <span class="gap-card-item-val weak">Feb 2025</span>
+      </div>
+      <div class="gap-card-item">
+        <span class="gap-card-item-label">TikTok videos</span>
+        <span class="gap-card-item-val weak">1</span>
+      </div>
+      <div class="gap-card-item">
+        <span class="gap-card-item-label">YouTube last post</span>
+        <span class="gap-card-item-val weak">1 month ago</span>
+      </div>
+    </div>
+
+    <div class="gap-arrow">→</div>
+
+    <div class="gap-card">
+      <div class="gap-card-label">What your reputation warrants</div>
+      <div class="gap-card-item">
+        <span class="gap-card-item-label">Award-winning filmmaker</span>
+        <span class="gap-card-item-val strong">✓</span>
+      </div>
+      <div class="gap-card-item">
+        <span class="gap-card-item-label">Featured in top wedding blogs</span>
+        <span class="gap-card-item-val strong">✓</span>
+      </div>
+      <div class="gap-card-item">
+        <span class="gap-card-item-label">Active masterclass</span>
+        <span class="gap-card-item-val strong">✓</span>
+      </div>
+      <div class="gap-card-item">
+        <span class="gap-card-item-label">High-profile clientele</span>
+        <span class="gap-card-item-val strong">✓</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gap-insight">
+    <p>The talent, the work, and the brand identity are already there. <strong>What's missing is consistent short-form distribution</strong> — the kind that compounds over time and puts your films in front of couples who are actively planning their weddings right now, on TikTok.</p>
+  </div>
+</section>
+
+<!-- WHAT I OFFER -->
+<section>
+  <div class="section-label">The Offer</div>
+  <h2>What I bring to your TikTok.</h2>
+
+  <div class="offer-grid">
+    <div class="offer-card">
+      <div class="offer-num">01</div>
+      <div class="offer-title">Content Repurposing</div>
+      <p class="offer-desc">You already have a library of stunning wedding films. I turn that existing footage into a consistent stream of short-form TikTok content — no new filming required.</p>
+    </div>
+    <div class="offer-card">
+      <div class="offer-num">02</div>
+      <div class="offer-title">Posting Strategy</div>
+      <p class="offer-desc">A structured content calendar built around trending audio, relevant hashtags, and optimal posting times — so your page grows with intention, not guesswork.</p>
+    </div>
+    <div class="offer-card">
+      <div class="offer-num">03</div>
+      <div class="offer-title">Community Engagement</div>
+      <p class="offer-desc">Responding to every comment. Building real audience connection. Because engagement isn't just a metric — it's what turns a viewer into a booking inquiry.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT IDEAS -->
+<section class="ideas-section">
+  <div class="section-label">Sample Content Plan</div>
+  <h2>Five ideas using footage<br>you already have.</h2>
+
+  <div class="ideas-list">
+    <div class="idea-row">
+      <span class="idea-num">01</span>
+      <div>
+        <div class="idea-title">The Colour Grade Reveal</div>
+        <p class="idea-desc">Raw footage → final grade side by side. Shows the craft behind "the magic." Highly shareable among couples and fellow filmmakers.</p>
+      </div>
+      <span class="idea-tag">Behind the craft</span>
+    </div>
+    <div class="idea-row">
+      <span class="idea-num">02</span>
+      <div>
+        <div class="idea-title">Reaction Reel</div>
+        <p class="idea-desc">First-look moments, guest reactions, tear-filled vows. Emotion-first content performs exceptionally well on TikTok's wedding niche.</p>
+      </div>
+      <span class="idea-tag">Emotional hook</span>
+    </div>
+    <div class="idea-row">
+      <span class="idea-num">03</span>
+      <div>
+        <div class="idea-title">Shot Selection BTS</div>
+        <p class="idea-desc">"How I got this shot" — showing your positioning, lens choice, lighting setup. Feeds your Masterclass audience and attracts couples who value the process.</p>
+      </div>
+      <span class="idea-tag">Education</span>
+    </div>
+    <div class="idea-row">
+      <span class="idea-num">04</span>
+      <div>
+        <div class="idea-title">Award Spotlight</div>
+        <p class="idea-desc">Surface your accolades. Blog features, award certificates, testimonials from high-profile couples. Social proof builds trust faster than any caption.</p>
+      </div>
+      <span class="idea-tag">Authority</span>
+    </div>
+    <div class="idea-row">
+      <span class="idea-num">05</span>
+      <div>
+        <div class="idea-title">"The Magician" Brand Series</div>
+        <p class="idea-desc">Short atmospheric edits — music-led, cinematic, no talking. Just the work. 15–30 seconds. Your signature style, packaged for TikTok's feed.</p>
+      </div>
+      <span class="idea-tag">Brand identity</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section>
+  <div class="section-label">Proof of Work</div>
+  <h2>Pages I've grown.<br>Results I've delivered.</h2>
+
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="proof-period">1 Month</div>
+      <div class="proof-metric">
+        <span class="proof-before">Low</span>
+        <span class="proof-arrow">→</span>
+        <span class="proof-after">↑ Growth</span>
+      </div>
+      <p class="proof-label">Consistent posting strategy + engagement focus</p>
+    </div>
+    <div class="proof-card">
+      <div class="proof-period">4 Months</div>
+      <div class="proof-metric">
+        <span class="proof-before">Flat</span>
+        <span class="proof-arrow">→</span>
+        <span class="proof-after">↑↑ Growth</span>
+      </div>
+      <p class="proof-label">Content calendar + community building</p>
+    </div>
+    <div class="proof-card">
+      <div class="proof-period">2 Months</div>
+      <div class="proof-metric">
+        <span class="proof-before">Inactive</span>
+        <span class="proof-arrow">→</span>
+        <span class="proof-after">Active</span>
+      </div>
+      <p class="proof-label">Revived dormant page with structured content plan</p>
+    </div>
+  </div>
+
+  <p style="margin-top: 24px; font-size: 13px; color: var(--warm-grey); font-style: italic;">* Full before/after screenshots available on request. Exact numbers withheld for client confidentiality.</p>
+</section>
+
+<!-- ENGAGEMENT EDGE -->
+<section class="edge-section">
+  <div class="section-label">The Differentiator</div>
+  <h2>Most managers post.<br>I build communities.</h2>
+
+  <div class="edge-body">
+    <div class="edge-text">
+      <p>Your current TikTok has <strong>219 likes on one video and zero comment responses</strong>. That's not a content problem — that's a connection problem.</p>
+      <p>Every unanswered comment is a potential client who moved on. Every reply is a micro-conversation that the algorithm notices and amplifies.</p>
+      <p>I respond to every comment. I engage with your niche. I treat your TikTok like a <strong>community, not a broadcasting channel</strong> — because that's what drives bookings, not just views.</p>
+    </div>
+    <div class="edge-quote">
+      <p>Audience response leads to clientele. A page that talks back books more weddings than a page that just posts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Let's talk about your<br><em style="color: var(--gold);">30-day plan.</em></h2>
+  <p>No commitment. Just a conversation about what your TikTok could look like.</p>
+  <div class="cta-links">
+    <a href="mailto:imetcreates@gmail.com" class="cta-link cta-link-primary">✉ imetcreates@gmail.com</a>
+    <a href="https://tiktok.com/@royaltemi" class="cta-link cta-link-secondary">TikTok @royaltemi</a>
+    <a href="https://instagram.com/imetcreates" class="cta-link cta-link-secondary">IG @imetcreates</a>
+  </div>
+</section>
+
+<footer>
+  <span>Imet Creates · Temi Kaiyewu</span>
+  <span>TikTok Growth Proposal · May 2026</span>
+  <span>Lagos, Nigeria</span>
+</footer>
+
+</body>
+</html>
